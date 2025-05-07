@@ -18,7 +18,9 @@
 {$IFNDEF WL_WEBGRAPHGEN_INCLUDED}  {$INCLUDE_ONCE utils/webgraphgen.simba}
 {$IFNDEF WL_RSCHUNKS_INCLUDED}     {$INCLUDE_ONCE utils/rschunks.simba}
 {$IFNDEF WL_WASPCLIENT_INCLUDED}   {$INCLUDE_ONCE utils/waspclient.simba}
+{$IFNDEF WL_DEBUG_INCLUDED}        {$INCLUDE_ONCE utils/debug.simba}
 
+{$ENDIF}
 {$ENDIF}
 {$ENDIF}
 {$ENDIF}

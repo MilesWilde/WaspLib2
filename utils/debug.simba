@@ -1,0 +1,172 @@
+{$DEFINE WL_DEBUG_INCLUDED}
+
+procedure Debug(cuboids: TCuboidArray);
+var
+  img: TImage;
+begin
+  img := TImage.CreateFromTarget();
+  img.DrawCuboidArray(cuboids);
+  img.Show();
+  img.Free();
+end;
+procedure Debug(atpa: T2DPointArray); overload;
+var
+  img: TImage;
+begin
+  img := TImage.CreateFromTarget();
+  img.DrawATPA(atpa);
+  img.Show();
+  img.Free();
+end;
+
+procedure Debug(tpa: TPointArray); overload;
+var
+  img: TImage;
+begin
+  img := TImage.CreateFromTarget();
+  img.DrawTPA(tpa);
+  img.Show();
+  img.Free();
+end;
+
+procedure Debug(b: TBox); overload;
+var
+  img: TImage;
+begin
+  img := TImage.CreateFromTarget();
+  img.DrawBox(b);
+  img.Show();
+  img.Free();
+end;
+
+procedure Debug(boxes: TBoxArray; filled: Boolean = False); overload;
+var
+  img: TImage;
+begin
+  img := TImage.CreateFromTarget();
+  img.DrawBoxArray(boxes, filled);
+  img.Show();
+  img.Free();
+end;
+
+procedure DebugInverted(b: TBox); overload;
+var
+  img: TImage;
+begin
+  img := TImage.CreateFromTarget();
+  img.DrawBoxInverted(b);
+  img.Show();
+  img.Free();
+end;
+
+procedure Debug(center: TPoint; radius: Integer); overload;
+var
+  img: TImage;
+begin
+  img := TImage.CreateFromTarget();
+  img.DrawCircle(center, radius);
+  img.Show();
+  img.Free();
+end;
+
+procedure Debug(circle: TCircle); overload;
+var
+  img: TImage;
+begin
+  img := TImage.CreateFromTarget();
+  img.DrawCircle(circle);
+  img.Show();
+  img.Free();
+end;
+
+procedure Debug(circles: TCircleArray); overload;
+var
+  img: TImage;
+  c: TCircle;
+begin
+  img := TImage.CreateFromTarget();
+  for c in circles do
+    img.DrawCircle(c);
+  img.Show();
+  img.Free();
+end;
+
+procedure Debug(centers: TPointArray; radius: Integer; filled: Boolean = False); overload;
+var
+  img: TImage;
+begin
+  img := TImage.CreateFromTarget();
+  img.DrawCircleArray(centers, radius, filled);
+  img.Show();
+  img.Free();
+end;
+
+procedure DebugLine(startPt, stopPt: TPoint); overload;
+var
+  img: TImage;
+begin
+  img := TImage.CreateFromTarget();
+  img.DrawLine(startPt, stopPt);
+  img.Show();
+  img.Free();
+end;
+
+procedure Debug(polys: TPolygonArray; filled: Boolean = False); overload;
+var
+  img: TImage;
+begin
+  img := TImage.CreateFromTarget();
+  img.DrawPolygonArray(polys, filled);
+  img.Show();
+  img.Free();
+end;
+
+procedure Debug(q: TQuad); overload;
+var
+  img: TImage;
+begin
+  img := TImage.CreateFromTarget();
+  img.DrawQuad(q);
+  img.Show();
+  img.Free();
+end;
+
+procedure Debug(quads: TQuadArray; filled: Boolean = False); overload;
+var
+  img: TImage;
+begin
+  img := TImage.CreateFromTarget();
+  img.DrawQuadArray(quads, filled);
+  img.Show();
+  img.Free();
+end;
+
+procedure Debug(text: String; position: TPoint); overload;
+var
+  img: TImage;
+begin
+  img := TImage.CreateFromTarget();
+  img.DrawText(text, position);
+  img.Show();
+  img.Free();
+end;
+
+procedure Debug(text: String; box: TBox; align: EImageTextAlign); overload;
+var
+  img: TImage;
+begin
+  img := TImage.CreateFromTarget();
+  img.DrawText(text, box, align);
+  img.Show();
+  img.Free();
+end;
+
+procedure Debug(textLines: TStringArray; position: TPoint); overload;
+var
+  img: TImage;
+begin
+  img := TImage.CreateFromTarget();
+  img.DrawTextLines(textLines, position);
+  img.Show();
+  img.Free();
+end;  
